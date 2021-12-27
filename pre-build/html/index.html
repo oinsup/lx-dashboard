@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../lib/gridstack/gridstack.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+
+    <script src="../lib/gridstack/gridstack-h5.js"></script>
+    <script src="../lib/jquery-1.12.4.js"></script>
+    <script src="../js/ui.js"></script>
+    <title>LX 통합 대시보드</title>
+</head>
+<body>
+    <div id="wrap">
+        <div class="flexWrap">
+            <div class="menu menuLeft wide">
+                <h1>
+                    <img src="../images/common/logo.png" alt="LX 통합대시보드">
+                </h1>
+                <div>
+                    <div class="menuList">
+                        <ul>
+                            <li class="menu01 active"><span>공통</span></li>
+                            <li class="menu03"><span>지적측량</span></li>
+                            <li class="menu04"><span>제조사</span></li>
+                            <li class="menu05"><span>공간정보</span></li>
+                            <li class="menu06"><span>해외사업</span></li>
+                        </ul>
+                    </div>
+                    <div class="dashList cScroll">
+                        <ul>
+                            <li><i class="bulColor red"></i><span>테스트</span></li>
+                            <li><i class="bulColor peacock"></i><span>테스트</span></li>
+                            <li><i class="bulColor yellow"></i><span>테스트</span></li>
+                            <li><i class="bulColor green"></i><span>테스트</span></li>
+                            <li><i class="bulColor black"></i><span>테스트</span></li>
+                            <li><i class="bulColor pink"></i><span>테스트</span></li>
+                            <li><i class="bulColor orange"></i><span>테스트</span></li>
+                        </ul>
+                    </div>
+                    <div class="btnDashboard">
+                        <button type="button"><span class="hidden">대시보드 생성</span></button>
+                        <span>대시보드 생성</span>
+                    </div>
+                    <div class="menuSet">
+                        <button type="button"><span>설정</span></button>
+                    </div>
+                    <!-- <div class="colorPickArea">
+                        <ul>
+                            <li><span class="blue active"></span></li>
+                            <li><span class="green"></span></li>
+                            <li><span class="yellow"></span></li>
+                            <li><span class="navy"></span></li>
+                        </ul>
+                    </div> -->
+                </div>
+                <button type="button" class="btnToggle active"><span class="hidden">토글버튼</span></button>
+            </div>
+            <div id="content">
+                <div class="tab">
+                    <button type="button" class="btnSlideAdd"><span class="hidden">슬라이드 추가</span></button>
+                    <ul>
+                        <li class="active">
+                            <span>슬라이드</span>
+                            <button type="button" class="btnSlideClose"><span class="hidden">닫기</span></button>
+                        </li>
+                        <li>
+                            <span>테스트</span>
+                            <button type="button" class="btnSlideClose"><span class="hidden">닫기</span></button>
+                        </li>
+                    </ul>
+                    <div class="util">
+                        <button type="button" class="btnSlide"><span>자동슬라이드</span></button>
+                        <button type="button" class="btnPrint"><span>인쇄</span></button>
+                        <button type="button" class="btnLx"><span>통합플랫폼</span></button>
+                    </div>
+                </div>
+                <div class="boardArea">
+                    <!--board-->
+                    <div class="board active">
+                        <div class="grid-stack"></div>
+                        <div class="btnUse">
+                            <button type="button" class="btnWidgetAdd"><span>위젯 추가</span><i class="ico widgetAdd"></i></button>
+                            <button type="button" class="btnSavePanel"><span class="white">패널 저장</span><i class="ico savePanel"></i></button>
+                        </div>
+                    </div>
+                    <!--//board-->
+                    <!--board-->
+                    <div class="board">
+                        <div class="searchArea">
+                            <div>
+                                <label>기 관</label>
+                                <div class="comboBox">
+                                    <span>본부 선택</span>
+                                    <ul>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                    </ul>
+                                </div>
+                                <div class="comboBox">
+                                    <span>지사 선택</span>
+                                    <ul>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                    </ul>
+                                </div>
+                                <div class="comboBox">
+                                    <span>소관청</span>
+                                    <ul>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <label>회계년도</label>
+                                <div class="comboBox sm">
+                                    <span>2020</span>
+                                    <ul>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" class="btn blue"><span>검색</span></button>
+                        </div>
+                        <div class="grid-stack"></div>
+                        <div class="btnUse">
+                            <button type="button" class="btnWidgetAdd"><span>위젯 추가</span><i class="ico widgetAdd"></i></button>
+                            <button type="button" class="btnSavePanel"><span class="white">패널 저장</span><i class="ico savePanel"></i></button>
+                        </div>
+                    </div>
+                    <!--//board-->
+                </div>
+            </div>
+            <div class="dataBoard">
+                <button type="button" class="btnDataboardResize"><span class="hidden">늘이기/줄이기</span></button>
+                <div class="head">
+                    <p class="tit"><i class="icoData"></i><span>데이터 보드</span></p>
+                    <button type="button" class="btnDataboardClose"><span class="hidden">닫기</span></button>
+                </div>
+                <div class="cont">
+                    <div class="inner">
+                        <p class="title">지사별 정산금액</p>
+                        <!--tabContWrap-->
+                        <div class="tabContWrap">
+                            <!--tabNav-->
+                            <div class="tabNav">
+                                <ul class="tabList">
+                                    <li class="active">차트</li>
+                                    <li>통계표</li>
+                                </ul>
+                            </div>
+                            <!--//tabNav-->
+                            <!--tabCont-->
+                            <div class="tabCont active">
+                                <div class="inner">
+                                    <div class="chartTypeArea">
+                                        <ul>
+                                            <li><button type="button" class="chartType horizontal active"><span class="hidden">가로막대</span></button></li>
+                                            <li><button type="button" class="chartType vertical"><span class="hidden">세로막대</span></button></li>
+                                            <li><button type="button" class="chartType line"><span class="hidden">라인</span></button></li>
+                                            <li><button type="button" class="chartType rader"><span class="hidden">방사형</span></button></li>
+                                            <li><button type="button" class="chartType pie"><span class="hidden">파이</span></button></li>
+                                        </ul>
+                                    </div>
+                                    <div class="chartArea">
+                                        <canvas id="myChart7"></canvas>
+                                    </div>
+
+                                </div>
+                                <div class="toggleDiv">
+                                    <p>그래프 보기 설정</p>
+                                    <div class="toggleArea">
+                                        <div class="row">
+                                            <button type="button" class="toggle mint"><span>라벨</span></button>
+                                            <button type="button" class="toggle"><span>그래프수치</span></button>
+                                            <button type="button" class="toggle"><span>값</span></button>
+                                            <button type="button" class="toggle mint"><span>격자</span></button>
+                                        </div>
+                                        <div class="row">
+                                            <button type="button" class="toggle"><span>범례</span></button>
+                                            <button type="button" class="toggle mint"><span>스크롤바(가로)</span></button>
+                                            <button type="button" class="toggle"><span>스크롤바(세로)</span></button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--btnArea-->
+                                <div class="btnArea">
+                                    <button type="button" class="white btnDown">이미지 저장</button>
+                                </div>
+                                <!--//btnArea-->
+                            </div>
+                            <!--//tabCont-->
+                            <!--tabCont-->
+                            <div class="tabCont h600">
+                                <div class="inner">
+                                    <div class="table" style="height:600px">
+                                        <table>
+                                            <colgroup>
+                                                <col style="width: 22px;">
+                                                <col style="width: 35px;">
+                                                <col style="width: 90px;">
+                                                <col style="width: 60px;">
+                                                <col style="width: 60px;">
+                                                <col style="width: 85px;">
+                                                <col style="width: 60px;">
+                                                <col style="width: 60px;">
+                                                <col style="width: 100px;">
+                                                <col style="width: 60px;">
+                                            </colgroup>
+                                            <thead>
+                                                <tr class="txt-center">
+                                                    <th scope="col">No.</th>
+                                                    <th scope="col">
+                                                        <div class="checkbox">
+                                                            <input type="checkbox" id="chk10">
+                                                            <label for="chk10"></label>
+                                                        </div>
+                                                    </th>
+                                                    <th scope="col">본부명</th>
+                                                    <th scope="col">접수건수</th>
+                                                    <th scope="col">접수수량</th>
+                                                    <th scope="col">접수금액</th>
+                                                    <th scope="col">정산건수</th>
+                                                    <th scope="col">정산수량</th>
+                                                    <th scope="col">정산금액</th>
+                                                    <th scope="col">완료건수</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="txt-center">
+                                                <td class="num">1</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk11">
+                                                        <label for="chk11"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">2</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk12">
+                                                        <label for="chk12"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">3</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk13">
+                                                        <label for="chk13"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">4</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk14">
+                                                        <label for="chk14"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">5</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk15">
+                                                        <label for="chk15"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">6</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk16">
+                                                        <label for="chk16"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">7</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk17">
+                                                        <label for="chk17"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">8</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk18">
+                                                        <label for="chk18"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">9</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk19">
+                                                        <label for="chk19"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">10</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk20">
+                                                        <label for="chk20"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">11</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk21">
+                                                        <label for="chk21"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">12</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk22">
+                                                        <label for="chk22"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">13</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk23">
+                                                        <label for="chk23"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">14</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk24">
+                                                        <label for="chk24"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">15</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk25">
+                                                        <label for="chk25"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">16</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk26">
+                                                        <label for="chk26"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">17</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk27">
+                                                        <label for="chk27"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                                <td>224</td>
+                                                <td>124,360,000</td>
+                                                <td>76</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <!--btnArea-->
+                                <div class="btnArea">
+                                    <button type="button" class="white btnPrint">엑셀 출력</button>
+                                </div>
+                                <!--//btnArea-->
+                            </div>
+                            <!--//tabCont-->
+                        </div>
+                        <!--//tabContWrap-->
+                    </div>
+                </div>
+            </div>
+            <div class="widget">
+                <div>
+                    <h2><img src="../images/common/widget-title.png" alt="위젯 갤러리"></h2>
+                    <div class="inner">
+                        <div class="widgetList">
+                            <ul>
+                                <li>
+                                    <div class="box">
+                                        <div class="graphArea">
+                                            <img src="../images/common/dummy-graph6.png" alt="">
+                                        </div>
+                                        <div class="controlArea">
+                                            <ul>
+                                                <li><button type="button" class="add"></button><span>추가</span></li>
+                                                <li><button type="button" class="del"></button><span>삭제</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p>본부별 정산 완료금액</p>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="graphArea">
+                                            <img src="../images/common/dummy-graph7.png" alt="">
+                                        </div>
+                                        <div class="controlArea">
+                                            <ul>
+                                                <li><button type="button" class="add"></button><span>추가</span></li>
+                                                <li><button type="button" class="del"></button><span>삭제</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p>본부별 결산 완료수량 및 금액</p>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="graphArea">
+                                            <img src="../images/common/dummy-graph7.png" alt="">
+                                        </div>
+                                        <div class="controlArea">
+                                            <ul>
+                                                <li><button type="button" class="add"></button><span>추가</span></li>
+                                                <li><button type="button" class="del"></button><span>삭제</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p>12월 본부 결산 테이블</p>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="graphArea">
+                                            <img src="../images/common/dummy-graph8.png" alt="">
+                                        </div>
+                                        <div class="controlArea">
+                                            <ul>
+                                                <li><button type="button" class="add"></button><span>추가</span></li>
+                                                <li><button type="button" class="del"></button><span>삭제</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p>파이 저장 테스트</p>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="graphArea">
+                                            <img src="../images/common/dummy-graph9.png" alt="">
+                                        </div>
+                                        <div class="controlArea">
+                                            <ul>
+                                                <li><button type="button" class="add"></button><span>추가</span></li>
+                                                <li><button type="button" class="del"></button><span>삭제</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p>본부별 정산 완료금액</p>
+                                </li>
+                                <li>
+                                    <div class="box">
+                                        <div class="graphArea">
+                                            <img src="../images/common/dummy-graph8.png" alt="">
+                                        </div>
+                                        <div class="controlArea">
+                                            <ul>
+                                                <li><button type="button" class="add"></button><span>추가</span></li>
+                                                <li><button type="button" class="del"></button><span>삭제</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <p>파이 저장 테스트</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button type="button" class="btnToggle active"><span class="hidden">토글버튼</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="wave1"></div>
+        <div class="wave2"></div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript">
+        var items = [
+
+            {
+                w:5,
+                h:4,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart"></canvas>' +
+                    '</div>'
+                ,
+            },
+            {
+                w:3,
+                h:4,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart2"></canvas>' +
+                    '</div>'
+                ,
+            },
+            {
+                w:4,
+                h:2,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart3"></canvas>' +
+                    '</div>'
+                ,
+            },
+            {
+                w:4,
+                h:2,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart4"></canvas>' +
+                    '</div>'
+                ,
+            },
+            {
+                w:6,
+                h:2,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart5"></canvas>' +
+                    '</div>'
+                ,
+            },
+            {
+                w:6,
+                h:2,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart6"></canvas>' +
+                    '</div>'
+                ,
+            },
+        ];
+        var grid = GridStack.init({});
+        grid.load(items);
+        grid.on('resizestop', function(event,el) {
+            let width = parseInt(el.getAttribute('gs-w')) || 0;
+            // or all values...
+            let node = GridStackNode = el.gridstackNode; // {x, y, width, height, id, ....}
+            console.log(node)
+            if(node.w < 2){
+                el.classList.add('small')
+            }else{
+                el.classList.remove('small')
+            }
+            console.log()
+        });
+
+        /*차트js*/
+        var ctx = document.getElementById('myChart');
+        var ctx2 = document.getElementById('myChart2');
+        var ctx3 = document.getElementById('myChart3');
+        var ctx4 = document.getElementById('myChart4');
+        var ctx5 = document.getElementById('myChart5');
+        var ctx6 = document.getElementById('myChart6');
+        var ctx7 = document.getElementById('myChart7');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx2, {
+            type: 'polarArea',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx5, {
+            type: 'doughnut',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx6, {
+            type: 'radar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx7, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

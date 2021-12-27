@@ -1,0 +1,1626 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../lib/gridstack/gridstack.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="../css/common.css" type="text/css">
+
+    <script src="../lib/gridstack/gridstack-h5.js"></script>
+    <script src="../lib/jquery-1.12.4.js"></script>
+    <script src="../js/ui.js"></script>
+    <title>LX 통합 대시보드</title>
+</head>
+<body>
+    <div id="wrap">
+        <div class="flexWrap">
+            <div class="menu menuLeft wide">
+                <h1>
+                    <img src="../images/common/logo.png" alt="LX 통합대시보드">
+                </h1>
+                <div>
+                    <div class="menuList">
+                        <ul>
+                            <li class="menu01 active"><span>공통</span></li>
+                            <li class="menu03"><span>지적측량</span></li>
+                            <li class="menu04"><span>제조사</span></li>
+                            <li class="menu05"><span>공간정보</span></li>
+                            <li class="menu06"><span>해외사업</span></li>
+                        </ul>
+                    </div>
+                    <div class="dashList cScroll">
+                        <ul>
+                            <li><i class="bulColor red"></i><span>테스트</span></li>
+                            <li><i class="bulColor peacock"></i><span>테스트</span></li>
+                            <li><i class="bulColor yellow"></i><span>테스트</span></li>
+                            <li><i class="bulColor green"></i><span>테스트</span></li>
+                            <li><i class="bulColor black"></i><span>테스트</span></li>
+                            <li><i class="bulColor pink"></i><span>테스트</span></li>
+                            <li><i class="bulColor orange"></i><span>테스트</span></li>
+                        </ul>
+                    </div>
+                    <div class="btnDashboard">
+                        <button type="button"><span class="hidden">대시보드 생성</span></button>
+                        <span>대시보드 생성</span>
+                    </div>
+                    <!-- <div class="colorPickArea">
+                        <ul>
+                            <li><span class="blue active"></span></li>
+                            <li><span class="green"></span></li>
+                            <li><span class="yellow"></span></li>
+                            <li><span class="navy"></span></li>
+                        </ul>
+                    </div> -->
+                </div>
+                <button type="button" class="btnToggle active"><span class="hidden">토글버튼</span></button>
+            </div>
+            <div id="content">
+                <div class="tab">
+                    <button type="button" class="btnSlideAdd"><span class="hidden">슬라이드 추가</span></button>
+                    <ul>
+                        <li class="active">
+                            <span>슬라이드</span>
+                            <button type="button" class="btnSlideClose"><span class="hidden">닫기</span></button>
+                        </li>
+                        <li>
+                            <span>테스트</span>
+                            <button type="button" class="btnSlideClose"><span class="hidden">닫기</span></button>
+                        </li>
+                    </ul>
+                    <div class="util">
+                        <button type="button" class="btnPrint"><span>인쇄</span></button>
+                        <button type="button" class="btnLx"><span>통합플랫폼</span></button>
+                    </div>
+                </div>
+                <div class="boardArea">
+                    <!--board-->
+                    <div class="board active">
+                        <div class="grid-stack"></div>
+                        <div class="btnUse">
+                            <button type="button" class="btnWidgetAdd"><span>위젯 추가</span><i class="ico widgetAdd"></i></button>
+                            <button type="button" class="btnSavePanel"><span>패널 저장</span><i class="ico savePanel"></i></button>
+                        </div>
+                    </div>
+                    <!--//board-->
+                    <!--board-->
+                    <div class="board">
+                        <div class="searchArea">
+                            <div>
+                                <label>기 관</label>
+                                <div class="comboBox">
+                                    <span>본부 선택</span>
+                                    <ul>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                    </ul>
+                                </div>
+                                <div class="comboBox">
+                                    <span>지사 선택</span>
+                                    <ul>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                    </ul>
+                                </div>
+                                <div class="comboBox">
+                                    <span>소관청</span>
+                                    <ul>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div>
+                                <label>회계년도</label>
+                                <div class="comboBox sm">
+                                    <span>2020</span>
+                                    <ul>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                        <li>리스트</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button type="button" class="btn blue"><span>검색</span></button>
+                        </div>
+                        <div class="grid-stack"></div>
+                        <div class="btnUse">
+                            <button type="button" class="btnWidgetAdd"><span>위젯 추가</span><i class="ico widgetAdd"></i></button>
+                            <button type="button" class="btnSavePanel"><span>패널 저장</span><i class="ico savePanel"></i></button>
+                        </div>
+                    </div>
+                    <!--//board-->
+                </div>
+            </div>
+            <div class="dataBoard">
+                <button type="button" class="btnDataboardResize"><span class="hidden">늘이기/줄이기</span></button>
+                <div class="head">
+                    <p class="tit"><i class="icoData"></i><span>데이터 보드</span></p>
+                    <button type="button" class="btnDataboardClose"><span class="hidden">닫기</span></button>
+                </div>
+                <div class="cont">
+                    <div class="inner">
+
+                        <!--tabContWrap-->
+                        <div class="tabContWrap">
+                            <!--tabNav-->
+                            <div class="tabNav">
+                                <ul class="tabList">
+                                    <li class="active">차트</li>
+                                    <li>통계표</li>
+                                </ul>
+                            </div>
+                            <!--//tabNav-->
+                            <!--tabCont-->
+                            <div class="tabCont active">
+                                <div class="chartTypeArea">
+                                    <ul>
+                                        <li><button type="button" class="chartType horizontal active"><span class="hidden">가로막대</span></button></li>
+                                        <li><button type="button" class="chartType vertical"><span class="hidden">세로막대</span></button></li>
+                                        <li><button type="button" class="chartType line"><span class="hidden">라인</span></button></li>
+                                        <li><button type="button" class="chartType rader"><span class="hidden">방사형</span></button></li>
+                                        <li><button type="button" class="chartType pie"><span class="hidden">파이</span></button></li>
+                                    </ul>
+                                </div>
+                                <div class="chartArea">
+                                    <canvas id="myChart7"></canvas>
+                                </div>
+                                <div class="toggleArea">
+                                    <div class="row">
+                                        <button type="button" class="toggle"><span>라벨</span></button>
+                                        <button type="button" class="toggle"><span>그래프수치</span></button>
+                                        <button type="button" class="toggle"><span>값</span></button>
+                                        <button type="button" class="toggle"><span>격자</span></button>
+                                    </div>
+                                    <div class="row">
+                                        <button type="button" class="toggle"><span>범례</span></button>
+                                        <button type="button" class="toggle"><span>스크롤바(가로)</span></button>
+                                        <button type="button" class="toggle"><span>스크롤바(세로)</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--//tabCont-->
+                            <!--tabCont-->
+                            <div class="tabCont"></div>
+                            <!--//tabCont-->
+                        </div>
+                        <!--//tabContWrap-->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wave1"></div>
+        <div class="wave2"></div>
+    </div>
+    <div id="dimmed"></div>
+    <!-- popup -->
+    <div class="popup">
+        
+            <button type="button" class="btnClose">
+                <span class="hidden">팝업 닫기</span>
+            </button>
+            <!--tabContWrap-->
+            <div class="tabContWrap slide">
+                <!--tabNav-->
+                <div class="tabNav shortBg">
+                    <ul class="tabList">
+                        <li class="active">대시보드 생성</li>
+                        <li>대시보드 수정</li>
+                    </ul>
+                </div>
+                <!--//tabNav-->
+                <!--tabCont-->
+                <div class="tabCont active">
+                    <div class="inner type02">
+                        <!-- inputSearch -->
+                        <div class="inputSearch">
+                            <!-- inputGroup -->
+                            <div class="inputGroup">
+                                <label>색상</label>
+                                <!-- comboBox -->
+                                <div class="comboBox sm">
+                                    <span class="colorSelect">
+                                        <div class="represe">
+                                            <i class="bulColor red"></i>
+                                        </div>
+                                    </span>
+                                    <ul class="cScroll" style="height:60px;">
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor red"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor orange"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor lightOrange"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor yellow"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor darkYellow"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor darkYellow2"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor darkGreen"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor green"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor sky"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor peacock"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor marine"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor darkBlue"></i>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="represe">
+                                                <i class="bulColor prussian"></i>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- //comboBox -->
+                            </div>
+                            <!-- //inputGroup -->
+                            <!-- inputGroup -->
+                            <div class="inputGroup">
+                                <label for="i01">대시보드 제목</label>
+                                <input type="text" id="i01"/>
+                            </div>
+                            <!-- //inputGroup -->
+                        </div>
+                        <!-- //inputSearch -->
+                    </div>
+                    <!-- tabBottom -->
+                    <div class="tabBottom minh">
+                        <div class="btnArea">
+                            <button type="button" class="btn blue">
+                                <span>만들기</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- //tabBottom -->
+                </div>
+                <!--//tabCont-->
+                <!--tabCont-->
+                <div class="tabCont">
+                    <div class="inner">
+                        <!-- editArea -->
+                        <div class="editArea cScroll">
+                            <div class="row">
+                                <i class="bulColor red"></i>
+                                <p class="dashName">대시보드 제목1</p>
+                                <input type="text" class="editForm">
+                                <div class="btnGroup">
+                                    <button type="button" class="btn btnModify">수정</button>
+                                    <button type="button" class="btn btnDel">삭제</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <i class="bulColor sky"></i>
+                                <p>대시보드 제목2</p>
+                                <div class="btnGroup">
+                                    <button type="button" class="btn btnModify">수정</button>
+                                    <button type="button" class="btn btnDel">삭제</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <i class="bulColor darkBlue"></i>
+                                <p>대시보드 제목3</p>
+                                <div class="btnGroup">
+                                    <button type="button" class="btn btnModify">수정</button>
+                                    <button type="button" class="btn btnDel">삭제</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <i class="bulColor red"></i>
+                                <p>대시보드 제목4</p>
+                                <div class="btnGroup">
+                                    <button type="button" class="btn btnModify">수정</button>
+                                    <button type="button" class="btn btnDel">삭제</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <i class="bulColor yellow"></i>
+                                <p>대시보드 제목5</p>
+                                <div class="btnGroup">
+                                    <button type="button" class="btn btnModify">수정</button>
+                                    <button type="button" class="btn btnDel">삭제</button>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <i class="bulColor green"></i>
+                                <p>대시보드 제목6</p>
+                                <div class="btnGroup">
+                                    <button type="button" class="btn btnModify">수정</button>
+                                    <button type="button" class="btn btnDel">삭제</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- //editArea -->
+                    </div>
+                    <!-- tabBottom -->
+                    <div class="tabBottom">
+                        <div class="btnArea">
+                            <button type="button" class="btn blue">
+                                <span>확인</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- //tabBottom -->
+                </div>
+                <!--//tabCont-->
+            </div>
+            <!--//tabContWrap-->
+        
+    </div>
+    <!-- //popup -->
+
+    <!-- popup -->
+    <div class="popup" style="width:800px; top: 100px;">
+        
+        <button type="button" class="btnClose">
+            <span class="hidden">팝업 닫기</span>
+        </button>
+        <!--tabContWrapw-->
+        <div class="tabContWrap">
+            <!--tabNav-->
+            <div class="tabNav shortBg">
+                <ul class="tabList">
+                    <li class="active">새 슬라이드 생성</li>
+                    <li>슬라이드 불러오기</li>
+                </ul>
+            </div>
+            <!--//tabNav-->
+            <!--tabCont-->
+            <div class="tabCont active">
+                <!-- inner -->
+                <div class="inner">
+                    <div class="group colCont">
+                        <label for="i02">슬라이드 제목</label>
+                        <input type="text" class="type02" id="i02"/>
+                    </div>
+                    <!-- row -->
+                    <div class="group colCont">
+                        <label>슬라이드 레이아웃</label>
+                        <!-- gridArea -->
+                        <div class="gridArea layout">
+                            <div class="grid style01"></div>
+                            <div class="grid style02"></div>
+                            <div class="grid style03"></div>
+                            <div class="grid style04"></div>
+                        </div>
+                        <!-- //gridArea -->
+                    </div>
+                    <!-- //row -->
+                </div>
+                <!-- //inner -->
+                <!-- tabBottom -->
+                <div class="tabBottom">
+                    <div class="btnArea">
+                        <button type="button" class="btn blue">
+                            <span>만들기</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- //tabBottom -->
+            </div>
+            <!--//tabCont-->
+            
+            <!--tabCont-->
+            <div class="tabCont">
+                <div class="inner type02">
+                    <div class="row colCont">
+                        <!-- gridArea -->
+                        <div class="gridArea import cScroll">
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox sample01"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox sample02"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox sample03"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox sample04"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="imgBox"></div>
+                                <div class="flex ac sb">
+                                    <!-- txtArea -->
+                                    <div class="txtArea">
+                                        <strong>완성3</strong>
+                                            <p>2021.07.15(목) 17:19 생성일</p>
+                                            <p>2021.07.16(금) 17:56 최종수정일</p>                                       
+                                    </div>
+                                    <!-- //txtArea -->
+                                    <div class="chkIcon bd">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                        </div>
+                        <!-- //gridArea -->
+                    </div>
+                </div>
+                <!-- tabBottom -->
+                <div class="tabBottom">
+                    <div class="btnArea">
+                        <button type="button" class="btn grey">
+                            <span>선택삭제</span>
+                        </button>
+                        <button type="button" class="btn blue">
+                            <span>불러오기</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- //tabBottom -->
+            </div>
+            <!--//tabCont-->
+        </div>
+        <!--//tabContWrap-->
+    </div>
+    <!-- //popup -->
+
+    <!-- popup -->
+    <div class="popup" style="width:800px; top: 70px;">
+        <!-- popInner -->
+        <div class="popInner">
+            <button type="button" class="btnClose">
+                <span class="hidden">팝업 닫기</span>
+            </button>
+            <div class="inputBox">
+                <div class="inputGroup type02">
+                    <label for="i03">위젯 제목</label>
+                    <input type="text" class="type02" id="i03"/>
+                </div> 
+                <div class="inputGroup type02">
+                    <label for="i04">위젯 설명</label>
+                    <input type="text" class="type02" id="i04"/>
+                </div>
+            </div>
+            <!--tabContWrap-->
+            <div class="tabContWrap">
+                <!--tabNav-->
+                <div class="tabNav pt0">
+                    <ul class="tabList">
+                        <li class="active">데이터 선택</li>
+                        <li>차트 종류 선택</li>
+                        <li>차트 구성 선택</li>
+                    </ul>
+                </div>
+                <!--//tabNav-->
+                <!--tabCont-->
+                <div class="tabCont active">
+                    <!-- inner -->
+                    <div class="inner">
+                        <!-- rowContainer -->
+                        <div class="rowContainer">
+                            <!-- tableList -->
+                            <div class="tableList type01" style="height:340px">
+                                <div class="row">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <label>202012 본부 결산 테이블</label>
+                                </div>
+                                <div class="row">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <label>202012 본부 결산 테이블</label>
+                                </div>
+                                <div class="row">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <label>202012 본부 결산 테이블</label>
+                                </div>
+                                <div class="row">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <label>202012 본부 결산 테이블</label>
+                                </div>
+                                <div class="row">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <label>202012 본부 결산 테이블</label>
+                                </div>
+                                <div class="row">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <label>202012 본부 결산 테이블</label>
+                                </div>
+                                <div class="row">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <label>202012 본부 결산 테이블</label>
+                                </div>
+                                <div class="row">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <label>202012 본부 결산 테이블</label>
+                                </div>
+                                <div class="row">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <label>202012 본부 결산 테이블</label>
+                                </div>
+                            </div>
+                            <!-- //tableList -->
+
+                            <!-- tableList -->
+                            <div class="tableList type02">
+                                <!-- inner -->
+                                <div class="inner">
+                                    <div class="row">
+                                        <strong>칼럼 정보</strong>
+                                        <p>202012 본부 결산 테이블</p>
+                                    </div>
+                                    <div class="row">
+                                        <strong>칼럼 이름</strong>
+                                        <ul class="colList">
+                                            <li><span>본부명</span></li>
+                                            <li><span>접수건수</span></li>
+                                            <li><span>접수 수량</span></li>
+                                            <li><span>접수 금액</span></li>
+                                            <li><span>정산 건수</span></li>
+                                            <li><span>정산 수량</span></li>
+                                            <li><span>정산 금액</span></li>
+                                            <li><span>완료 건수</span></li>
+                                            <li><span>완료 수량</span></li>
+                                            <li><span>완료금액</span></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- //inner -->
+                            </div>
+                            <!-- //tableList -->
+                        </div>
+                        <!-- //rowContainer -->
+                    </div>
+                    <!-- //inner -->
+                    <!-- tabBottom -->
+                    <div class="tabBottom">
+                        <div class="btnArea right">
+                            <button type="button" class="btn blue">
+                                <span>다음단계</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- //tabBottom -->
+                </div>
+                <!--//tabCont-->
+                <!--tabCont-->
+                <div class="tabCont">
+                    <!-- inner -->
+                    <div class="inner">
+                        <!-- gridArea -->
+                        <div class="gridArea chart">
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="graphArea style01"></div>
+                                <div class="chartName">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <span>가로막대차트</span>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="graphArea style02"></div>
+                                <div class="chartName">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <span>세로막대차트</span>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="graphArea style03"></div>
+                                <div class="chartName">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <span>파이 차트</span>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="graphArea style04"></div>
+                                <div class="chartName">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <span>꺾은선 차트</span>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="graphArea style05"></div>
+                                <div class="chartName">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <span>방사형</span>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="graphArea style10"></div>
+                                <div class="chartName">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <span>트리맵</span>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="graphArea style06"></div>
+                                <div class="chartName">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <span>혼합형</span>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="graphArea style07"></div>
+                                <div class="chartName">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <span>지도차트 (색상렌더링)</span>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="graphArea style08"></div>
+                                <div class="chartName">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <span>지도 차트 (파이)</span>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                            <!-- grid -->
+                            <div class="grid">
+                                <div class="graphArea style09"></div>
+                                <div class="chartName">
+                                    <div class="chkIcon">
+                                        <span class="hidden">선택</span>
+                                    </div>
+                                    <span>지도 차트 (세로)</span>
+                                </div>
+                            </div>
+                            <!-- //grid -->
+                        </div>
+                        <!-- //gridArea -->
+                    </div>
+                    <!-- //inner -->
+                    <!-- tabBottom -->
+                    <div class="tabBottom">
+                        <div class="btnArea side">
+                            <button type="button" class="btn grey">
+                                <span>이전단계</span>
+                            </button>
+                            <button type="button" class="btn blue">
+                                <span>다음단계</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- //tabBottom -->
+                </div>
+                <!--//tabCont-->
+                <div class="tabCont">
+                    <div class="inner">
+                        <div class="graphArea" style="height:200px; margin-bottom: 25px; background-color: #f4f4f4;"></div>
+                        <!-- rowContainer -->
+                        <div class="rowContainer">
+                            <!-- tableList -->
+                            <div class="tableList type03">
+                                <!-- row -->
+                                <div class="row">
+                                    <label>Y축 선택</label>
+                                    <!-- comboBox -->
+                                    <div class="comboBox type02 lg">
+                                        <span>
+                                            <div class="flex">
+                                                <div class="tagGroup">
+                                                    <div class="tag">완료금액</div>
+                                                </div>
+                                                <div class="tagGroup">
+                                                    <div class="tag">완료수량</div>
+                                                </div>
+                                            </div>
+                                        </span>
+                                        <ul class="cScroll" style="height: 100px;">
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                        </ul>
+                                    </div>
+                                    <!-- //comboBox -->
+                                </div>
+                                <!-- //row -->
+
+                                <!-- row -->
+                                <div class="row">
+                                    <label>X축 선택</label>
+                                    <!-- comboBox -->
+                                    <div class="comboBox type02 lg">
+                                        <span>본부명</span>
+                                        <ul class="cScroll" style="height: 100px;">
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                            <li>리스트</li>
+                                        </ul>
+                                    </div>
+                                    <!-- //comboBox -->
+                                </div>
+                                <!-- //row -->
+                            </div>
+                            <!-- //tableList -->
+
+                            <!-- tableList -->
+                            <div class="tableList type03">
+                                <!-- table -->
+                                <div class="table cScroll" style="height:225px">
+                                    <table>
+                                        <colgroup>
+                                            <col style="width: 70px;">
+                                            <col style="width: 70px;">
+                                            <col style="width: 330px;">
+                                            <col style="width: 140px;">
+                                            <col style="width: 140px;">
+                                            <col style="width: 110px;">
+                                            <col style="width: 110px;">
+                                        </colgroup>
+                                        <thead>
+                                            <tr class="txt-center">
+                                                <th scope="col">No.</th>
+                                                <th scope="col">
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk10"/>
+                                                        <label for="chk10"></label>
+                                                    </div>
+                                                </th>
+                                                <th scope="col">본부명</th>
+                                                <th scope="col">접수건수</th>
+                                                <th scope="col">접수수량</th>
+                                                <th scope="col">접수금액</th>
+                                                <th scope="col">접수금액</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="txt-center">
+                                                <td class="num">1</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk11"/>
+                                                        <label for="chk11"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">2</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk12"/>
+                                                        <label for="chk12"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">3</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk13"/>
+                                                        <label for="chk13"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">4</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk14"/>
+                                                        <label for="chk14"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">5</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk15"/>
+                                                        <label for="chk15"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">6</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk16"/>
+                                                        <label for="chk16"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">7</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk17"/>
+                                                        <label for="chk17"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                            </tr>
+                                            <tr class="txt-center">
+                                                <td class="num">8</td>
+                                                <td>
+                                                    <div class="checkbox">
+                                                        <input type="checkbox" id="chk18"/>
+                                                        <label for="chk18"></label>
+                                                    </div>
+                                                </td>
+                                                <td>대구경북지역본부</td>
+                                                <td>1,784</td>
+                                                <td>4,655</td>
+                                                <td>1,407,245,273</td>
+                                                <td>1,407,245,273</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- //table -->
+                            </div>
+                            <!-- //tableList -->
+                        </div>
+                        <!-- //rowContainer -->
+                    </div>
+                    <!-- tabBottom -->
+                    <div class="tabBottom">
+                        <div class="btnArea side">
+                            <button type="button" class="btn grey">
+                                <span>이전단계</span>
+                            </button>
+                            <button type="button" class="btn blue">
+                                <span>저장</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- //tabBottom -->
+                </div>
+            </div>
+            <!--//tabContWrap-->
+        </div>
+        <!-- //popInner -->
+    </div>
+    <!-- //popup -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript">
+        var items = [
+
+            {
+                w:5,
+                h:4,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart"></canvas>' +
+                    '</div>'
+                ,
+            },
+            {
+                w:3,
+                h:4,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart2"></canvas>' +
+                    '</div>'
+                ,
+            },
+            {
+                w:4,
+                h:2,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart3"></canvas>' +
+                    '</div>'
+                ,
+            },
+            {
+                w:4,
+                h:2,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart4"></canvas>' +
+                    '</div>'
+                ,
+            },
+            {
+                w:6,
+                h:2,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart5"></canvas>' +
+                    '</div>'
+                ,
+            },
+            {
+                w:6,
+                h:2,
+                minH:2,
+                content:
+                    '<div class="popTitle">' +
+                    '     <div class="dashName">지역별 접수 현황 <span>(단위 : 건)</span></div>'+
+                    '     <div class="btnDashSetting">'+
+                    '         <button type="button" class="btnMore"><span class="hidden">더보기</span></button>'+
+                    '         <div class="btnGroup">'+
+                    '            <div class="settingGroup">' +
+                    '               <button type="button" class="btnSetting"></button>' +
+                    '               <ul>' +
+                    '                   <li>위젯바꾸기</li>' +
+                    '                   <li>삭제</li>' +
+                    '               </ul>' +
+                    '             </div>' +
+                    '             <button type="button" class="btnScale"></button>' +
+                    '             <button type="button" class="btnDown"></button>' +
+                    '         </div>' +
+                    '     </div>'+
+                    '</div>'+
+                    '<div class="popGraph">' +
+                    '  <canvas id="myChart6"></canvas>' +
+                    '</div>'
+                ,
+            },
+        ];
+        var grid = GridStack.init({});
+        grid.load(items);
+        grid.on('resizestop', function(event,el) {
+            let width = parseInt(el.getAttribute('gs-w')) || 0;
+            // or all values...
+            let node = GridStackNode = el.gridstackNode; // {x, y, width, height, id, ....}
+            console.log(node)
+            if(node.w < 2){
+                el.classList.add('small')
+            }else{
+                el.classList.remove('small')
+            }
+            console.log()
+        });
+
+        /*차트js*/
+        var ctx = document.getElementById('myChart');
+        var ctx2 = document.getElementById('myChart2');
+        var ctx3 = document.getElementById('myChart3');
+        var ctx4 = document.getElementById('myChart4');
+        var ctx5 = document.getElementById('myChart5');
+        var ctx6 = document.getElementById('myChart6');
+        var ctx7 = document.getElementById('myChart7');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx2, {
+            type: 'polarArea',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx3, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx5, {
+            type: 'doughnut',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx6, {
+            type: 'radar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        var myChart = new Chart(ctx7, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
